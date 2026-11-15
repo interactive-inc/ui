@@ -37,7 +37,7 @@ const skills = [
 
 export function SkillsGuide() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <PageTitle
         title="スキル"
         description="Claude Code や Codex などのコーディングエージェントにスキルを入れると、このライブラリの決まりに沿って画面を書かせられます。両方入れるのがおすすめです。"

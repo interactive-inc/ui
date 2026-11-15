@@ -75,7 +75,7 @@ export function ComponentPage(props: Props) {
   )
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <PageTitle
         title={doc.title}
         description={doc.summary}
@@ -125,7 +125,7 @@ export function ComponentPage(props: Props) {
         </CardContent>
       </Card>
       {guide !== undefined && (
-        <section className="flex flex-col gap-4">
+        <section className="flex flex-col gap-6">
           <h2 className="font-medium text-lg">{"パターン"}</h2>
           {guide.patterns.map((pattern) => {
             const { Preview, source } = findPattern(props.name, pattern.id)

@@ -13,7 +13,7 @@ type BoardProps = {
 export function DemoBoard(props: BoardProps) {
   return (
     <DemoFilterContext value={props.components}>
-      <div className="columns-1 gap-4 lg:columns-2 2xl:columns-3 [&>*]:mb-4 [&>*]:break-inside-avoid">
+      <div className="columns-1 gap-6 lg:columns-2 2xl:columns-3 [&>*]:mb-6 [&>*]:break-inside-avoid">
         {props.children}
       </div>
     </DemoFilterContext>

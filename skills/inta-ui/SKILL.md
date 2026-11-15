@@ -71,7 +71,7 @@ How the screen is divided and what goes where: regions, their roles, the shape o
 ### Gutter and spacing
 
 - Keep a 24px (p-6) gutter from the screen edges. The header's left and right ends, the text of sidebar items and the page content all sit on the same lines. Do not stack paddings: an item's inner padding counts toward the 24px. Use 16px (p-4) on mobile.
-- Use three spacing steps: 32px (gap-8) between sections, 16px (gap-4) inside a section and 8px (gap-2) between inline controls.
+- Use three spacing steps: 24px (gap-6) between cards and sections, the same as the gutter; 16px (gap-4) inside a section; 8px (gap-2) between inline controls.
 - Pages use the full width and the heading row reaches the right edge; cap only long prose. Leave padding and radius to the components and do not add extra borders or backgrounds around them.
 
 ## Color guidelines

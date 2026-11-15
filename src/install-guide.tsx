@@ -84,7 +84,7 @@ function Step(props: StepProps) {
 
 export function InstallGuide() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <PageTitle
         title="インストール"
         description="shadcn の CLI でコンポーネントを追加できます。中身は UI SDK で動き、依存パッケージも一緒に入ります。Tailwind CSS v4 のプロジェクトが前提です。"

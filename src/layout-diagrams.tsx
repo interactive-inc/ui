@@ -178,7 +178,7 @@ function Hierarchy() {
 }
 
 const gaps = [
-  { size: 32, label: "32px", use: "セクションとセクションの間" },
+  { size: 24, label: "24px", use: "カードとカード、セクションの間" },
   { size: 16, label: "16px", use: "セクションの中" },
   { size: 8, label: "8px", use: "横に並ぶ操作の間" },
 ]

@@ -26,7 +26,7 @@ export function GuidelinesPage(props: Props) {
   const page = findGuidelinePage(props.slug)
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <PageTitle title={page.title} description={page.description} />
       {page.sections.map((section) => {
         const Diagram = diagrams[section.id]

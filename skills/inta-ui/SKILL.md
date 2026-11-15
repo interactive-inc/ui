@@ -115,6 +115,7 @@ Colors are specified with role-based design tokens. Their order of darkness is f
 - primary is for the most important action on a surface and for the selected toggle. Keep one primary per surface.
 - secondary is for every other action and for selected items. It is clearly distinct from every surface, so it stays visible on all four.
 - Never give page and secondary the same color; a selected item would merge with the page ground.
+- Directly on the page ground (page heading: badges, action buttons), secondary controls take the card color: set --secondary: var(--card) on that region. Light theme only.
 - Only destructive (irreversible actions) and charts carry hue. Do not add color for decoration.
 
 ### Lines and text

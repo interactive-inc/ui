@@ -113,7 +113,13 @@ function Actions() {
               className="flex flex-col items-center gap-3 rounded-2xl border p-6"
               style={{ backgroundColor: `var(--${surface.token})` }}
             >
-              <span className={secondaryShape} />
+              <span
+                className={
+                  surface.token === "page"
+                    ? "h-8 w-20 shrink-0 rounded-full bg-card"
+                    : secondaryShape
+                }
+              />
               <span className={primaryShape} />
             </div>
             <Caption token={surface.token} label="の上" />
@@ -121,7 +127,10 @@ function Actions() {
         ))}
       </div>
       <div className="flex flex-wrap gap-x-6 gap-y-1">
-        <Caption token="secondary" label="上の形。サブの操作と選択中" />
+        <Caption
+          token="secondary"
+          label="上の形。サブの操作と選択中。page の上では card の色"
+        />
         <Caption token="primary" label="下の形。主要な操作" />
       </div>
     </div>

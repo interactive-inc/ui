@@ -100,7 +100,7 @@ export function ComponentPage(props: Props) {
         )}
         {doc.sdk !== undefined && (
           <Badge
-            variant="outline"
+            variant="secondary"
             render={
               <a href={`https://ui-sdk.dev/docs/react/components/${doc.sdk}`} />
             }

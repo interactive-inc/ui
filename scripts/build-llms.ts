@@ -74,12 +74,6 @@ function findExports(name: string) {
   return names
 }
 
-function categoryOf(name: string) {
-  return categories.find((category) =>
-    (category.components as readonly string[]).includes(name),
-  )
-}
-
 const rules = `## How to write code with this library
 
 - Add a component with \`vp dlx shadcn@latest add @inta/<name>\` and import it from \`@/components/ui/<name>\`
@@ -176,40 +170,21 @@ ${catalog}
 
 function componentPage(name: string) {
   const doc = componentDocs[name]
-  const item = registry.items.find((entry) => entry.name === name)
-  const category = categoryOf(name)
   const example = findExample(name)
   const exports = findExports(name)
-  const sections = [
-    `# ${doc.title}`,
-    `> ${doc.summaryEn}`,
-    `Use case: ${category?.titleEn ?? "none"} (${site}/cases/${category?.slug ?? ""}/)`,
-    `Page: ${site}/components/${name}/`,
-    `## Add\n\n\`\`\`sh\nvp dlx shadcn@latest add @inta/${name}\n\`\`\`\n\nSource: ${site}/r/${name}.json`,
-    `## Import\n\n\`\`\`tsx\nimport {\n${exports.map((entry) => `  ${entry},`).join("\n")}\n} from "@/components/ui/${name}"\n\`\`\``,
+  const header = [
+    `- add: \`vp dlx shadcn@latest add @inta/${name}\``,
+    `- import from \`@/components/ui/${name}\`: ${exports.join(", ")}`,
   ]
-  if (item?.dependencies !== undefined && item.dependencies.length > 0) {
-    sections.push(
-      `## Dependencies\n\n${item.dependencies.map((entry) => `- ${entry}`).join("\n")}`,
-    )
-  }
   if (doc.sdk !== undefined) {
-    sections.push(
-      `## Behavior\n\nBuilt on UI SDK ${doc.sdk}. For parts, props, state data attributes and change callbacks, read ${sdkDocs}/${doc.sdk}.md`,
-    )
+    header.push(`- UI SDK API: ${sdkDocs}/${doc.sdk}.md`)
   }
+  const sections = [`# ${doc.title}`, `> ${doc.summaryEn}`, header.join("\n")]
   const guide = guides.get(name)
   if (guide !== undefined) {
-    if (guide.notes !== undefined) {
-      sections.push(
-        `## Notes\n\n${guide.notes.map((note) => `- ${note}`).join("\n")}`,
-      )
-    } else if (guide.en !== undefined) {
-      sections.push(`## Usage\n\n${guide.en.usage.join("\n\n")}`)
-      if (guide.en.sdk !== undefined) {
-        sections.push(`## UI SDK\n\n${guide.en.sdk.join("\n\n")}`)
-      }
-    }
+    sections.push(
+      `## Notes\n\n${guide.notes.map((note) => `- ${note}`).join("\n")}`,
+    )
     sections.push(
       `## Patterns\n\n${guide.patterns
         .map((pattern) => {
@@ -222,9 +197,7 @@ function componentPage(name: string) {
         .join("\n\n")}`,
     )
   } else if (example !== undefined) {
-    sections.push(
-      `## Example\n\nCode used on the showcase site.\n\n\`\`\`tsx\n${example}\n\`\`\``,
-    )
+    sections.push(`## Example\n\n\`\`\`tsx\n${example}\n\`\`\``)
   }
   return `${sections.join("\n\n")}\n`
 }

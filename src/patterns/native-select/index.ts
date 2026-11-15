@@ -1,10 +1,11 @@
 import type { ComponentGuide } from "@/src/patterns/types"
 
 export const guide = {
-  usage: [
-    "ブラウザ標準の select に見た目だけを合わせた部品。スマートフォンでは OS のピッカーが開くので、都道府県のような長い一覧を手早く選ばせたいときに向く。選択肢に説明やアイコンを付けたい、複数を選ばせたいときは Select を使う。",
-    "UI SDK の部品ではないので、Field の中では FieldControl の render に NativeSelect を渡して FieldLabel とつなぐ。選択肢は NativeSelectOption、見出しで分けるときは NativeSelectOptGroup で並べる。",
-    "値は標準の onChange の event.currentTarget.value で受ける。エージェントは UI SDK の部品しか操作できないので、エージェントにも入力させたいフォームでは Select を選ぶ。",
+  notes: [
+    "Native <select> styled; mobile system picker, good for long lists (prefectures). Needs descriptions/icons/multiple -> Select.",
+    "Not an SDK component: in Field use render={<NativeSelect />} on FieldControl. Parts: NativeSelectOption, NativeSelectOptGroup.",
+    'Value: event.currentTarget.value in standard onChange. size="sm" available.',
+    "Agents cannot operate it (no agent kind); use Select for agent-fillable forms.",
   ],
   patterns: [
     {
@@ -14,8 +15,7 @@ export const guide = {
         "FieldControl の render に NativeSelect を渡して、ラベルとつなぐ。",
       en: {
         title: "Basic",
-        description:
-          "Pass NativeSelect to the render prop of FieldControl to connect it to the label.",
+        description: "Pass NativeSelect to FieldControl render.",
       },
     },
     {
@@ -25,8 +25,7 @@ export const guide = {
         "NativeSelectOptGroup で選択肢を見出しごとにまとめる。選べない選択肢は disabled にする。",
       en: {
         title: "Groups",
-        description:
-          "Group options under headings with NativeSelectOptGroup. Disable options that cannot be chosen.",
+        description: "Group with NativeSelectOptGroup; disable options.",
       },
     },
     {
@@ -35,8 +34,7 @@ export const guide = {
       description: "value と onChange で値を持ち、選んだ数量から小計を出す。",
       en: {
         title: "Using the value",
-        description:
-          "Hold the value with value and onChange, and show a subtotal from the chosen quantity.",
+        description: "Hold value with value and onChange.",
       },
     },
     {
@@ -45,15 +43,8 @@ export const guide = {
       description: 'size="sm" にして、ラベルと同じ行に置く。',
       en: {
         title: "Compact setting",
-        description: 'Use size="sm" and place it on the same row as its label.',
+        description: 'size="sm" on the label\'s row.',
       },
     },
   ],
-  en: {
-    usage: [
-      "A native select styled to match. On phones it opens the system picker, so it suits picking quickly from long lists such as prefectures. Use Select when options need descriptions or icons, or when several can be chosen.",
-      "It is not a UI SDK component, so inside a Field pass NativeSelect to the render prop of FieldControl to connect it to the FieldLabel. List options with NativeSelectOption and group them under headings with NativeSelectOptGroup.",
-      "Read the value from event.currentTarget.value in the standard onChange. Agents can only operate UI SDK components, so choose Select for forms an agent should also fill in.",
-    ],
-  },
 } satisfies ComponentGuide

@@ -46,7 +46,7 @@ test("すべての部品に使い方とパターンがある", () => {
     const source = readFileSync(`${dir}/index.ts`, "utf8")
     const ids = [...source.matchAll(/id: "([^"]+)"/g)].map((match) => match[1])
     expect(ids.length, name).toBeGreaterThanOrEqual(3)
-    expect(source, name).toContain("en:")
+    expect(source, name).toContain("notes: [")
     const patternFiles = readdirSync(dir)
       .filter((file) => file.endsWith(".tsx"))
       .map((file) => file.replace(".tsx", ""))

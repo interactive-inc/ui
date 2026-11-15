@@ -12,12 +12,6 @@ export type ComponentGuide = {
   /**
    * AI 向けの要点。英語の短い箇条書き
    */
-  notes?: string[]
+  notes: string[]
   patterns: Pattern[]
-  usage?: string[]
-  sdk?: string[]
-  en?: {
-    usage: string[]
-    sdk?: string[]
-  }
 }

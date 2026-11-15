@@ -24,9 +24,17 @@
       "**/*.ts",
       "**/*.tsx",
       "**/*.json",
-      "!**/.next/**/*",
+      "!public/r",
+      "!out",
+      "!dist",
+      "!.void",
+      "!.cloudflare",
+      "!.wrangler",
+      "!components/ui.base-maia/*",
       "!components/ui/*",
       "!lib/utils.ts",
+      "!hooks/*",
+      "!lib/highlighter.tsx",
       "!registry/components/ui/*",
       "!registry/hooks/*"
     ]

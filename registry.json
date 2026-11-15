@@ -1,20 +1,1491 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "inta",
+  "homepage": "https://ui.inta.site/",
   "items": [
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "utils",
+      "dependencies": ["cn"],
       "files": [
         {
-          "path": "registry/new-york/blocks/inta-hello-world/inta-hello-world.tsx",
-          "type": "registry:component"
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
         }
       ]
+    },
+    {
+      "name": "highlighter",
+      "type": "registry:lib",
+      "title": "Highlighter",
+      "description": "highlighter",
+      "dependencies": ["shiki"],
+      "files": [
+        {
+          "path": "lib/highlighter.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-highlighted-code",
+      "type": "registry:hook",
+      "title": "Use Highlighted Code",
+      "description": "use-highlighted-code",
+      "registryDependencies": ["https://ui.inta.site/r/highlighter.json"],
+      "files": [
+        {
+          "path": "hooks/use-highlighted-code.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Use Mobile",
+      "description": "use-mobile",
+      "files": [
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Expands and collapses multiple sections, as for FAQs. If there is only one section, use Collapsible.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Asks for confirmation before an irreversible action. Make the confirm button AlertDialogClose value=\"confirm\" and add data-agent-confirm.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Keeps a notice or error visible within the page. For a temporary notification, use Toast.",
+      "dependencies": ["class-variance-authority", "cn"],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "A box that keeps the aspect ratio of an image or video.",
+      "dependencies": ["cn"],
+      "files": [
+        {
+          "path": "components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Shows an attached file as a card with its name, type, and status.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A person's image that shows initials when it cannot load. Give it a name with aria-label, or mark it aria-hidden if decorative.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Shows a status or category as a short label.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Shows the hierarchy down to the current location as links.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Wraps message text in a speech bubble shape.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Visually joins related buttons or inputs into one unit. If arrow keys should move between them, use Toolbar.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/separator.json"],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Triggers an action such as save, submit, or delete. For a button that stays pressed, use Toggle.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Picks a date or range from a monthly grid. To combine it with an input field, use Date Picker.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Puts a self-contained piece of content on a single surface, with header, body, and action sections.",
+      "dependencies": ["cn"],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Scrolls through slides horizontally.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Adds theme colors, a legend, and tooltips to recharts graphs.",
+      "dependencies": ["cn", "recharts"],
+      "files": [
+        {
+          "path": "components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Turns independent items on or off one by one. Use it for multiple selection and consent; it also has an indeterminate state.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "Displays code with line numbers, diffs, and a copy button.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Expands and collapses a single section.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta"],
+      "files": [
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Filters a list by typing and picks one or more items. Selections can be shown as chips.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.inta.site/r/button.json",
+        "https://ui.inta.site/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A command palette that searches and runs actions. It works in a dialog or on its own.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.inta.site/r/dialog.json",
+        "https://ui.inta.site/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Opens a list of actions on right-click or long press.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Has the user do a single task on top of the page, such as filling in a form or checking details.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A panel pulled in from the screen edge that can be dismissed by swiping. Best suited to mobile.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Opens a list of actions from a button. Use it for per-row \"more actions\".",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Shown when there is no data, with a suggested next action.",
+      "dependencies": ["class-variance-authority", "cn"],
+      "files": [
+        {
+          "path": "components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Binds a label, description, and error to an input component. Wrap every form input in a Field.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/separator.json"],
+      "files": [
+        {
+          "path": "components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Shows a content preview when the pointer rests on a link.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Adds icons, buttons, or units before or after an input. Use it for search fields and URL displays with a copy button.",
+      "dependencies": ["class-variance-authority", "cn"],
+      "registryDependencies": [
+        "https://ui.inta.site/r/button.json",
+        "https://ui.inta.site/r/input.json",
+        "https://ui.inta.site/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "A one-time code input split into one box per digit.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A single-line text input, named with Field and FieldLabel. For multiple lines use Textarea; for numbers use Number Input.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A single row of a list with an icon, title, description, and actions. Use it for settings lists and people lists.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/separator.json"],
+      "files": [
+        {
+          "path": "components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Displays the keys of a keyboard shortcut. Display only.",
+      "dependencies": ["cn"],
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "The name of an input component. Normally use FieldLabel inside a Field instead.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Marks a spot in body text to draw attention to it.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "The application menu bar at the top, lining up items such as File, Edit, and View.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/dropdown-menu.json"],
+      "files": [
+        {
+          "path": "components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "A chat message list that scrolls to the bottom on new messages and shows a button to jump back.",
+      "dependencies": [
+        "@shadcn/react",
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "A single chat message, with sender, body, and actions.",
+      "dependencies": ["cn"],
+      "files": [
+        {
+          "path": "components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "The browser's built-in select. Choose it only when you want the native mobile picker; otherwise use Select.",
+      "dependencies": ["cn", "lucide-react"],
+      "files": [
+        {
+          "path": "components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Site navigation where each item can open a panel of links.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Moves through pages of results.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Opens a small panel next to a button for quick editing or confirmation in place.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Shows how far a task has progressed. Use the indeterminate display when the end is unknown.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "Has the AI ask the user questions one after another, answered by choices or free text.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Picks one option from a small set. Use it when all the options need to be visible at once.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Panels whose size can be changed by dragging the divider.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A scroll region with a styled appearance.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Picks one or more items from a popup list. If the list is long enough to need search, use Combobox.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A line that divides content.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A panel that slides in from the edge of the screen, used for detail views and filter conditions.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Navigation placed on the left of an app, with collapsing and mobile support.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.inta.site/r/button.json",
+        "https://ui.inta.site/r/input.json",
+        "https://ui.inta.site/r/separator.json",
+        "https://ui.inta.site/r/sheet.json",
+        "https://ui.inta.site/r/skeleton.json",
+        "https://ui.inta.site/r/tooltip.json",
+        "https://ui.inta.site/r/use-mobile.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A placeholder showing the shape of content while it loads.",
+      "dependencies": ["cn"],
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Chooses a number or range by dragging a thumb. If an exact value is required, use Number Input.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "A rotating indicator showing that loading is in progress.",
+      "dependencies": ["cn", "lucide-react"],
+      "files": [
+        {
+          "path": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Enables or disables a setting immediately, for settings that take effect without waiting for a save button.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Presents row and column data as a table.",
+      "dependencies": ["cn"],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Switches between panels in the same place.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text input for notes, comments, and body text.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Briefly reports the result of an action, and can hold actions such as undo.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of toggle buttons where either one or several can be pressed.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/toggle.json"],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A button that stays on once pressed, for things like bold, pin, or favorite. To enable or disable a setting, use Switch.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Shows a short name or hint for things like icon buttons.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "trace",
+      "type": "registry:ui",
+      "title": "Trace",
+      "description": "Shows the AI's processing steps and tool calls in an expandable form.",
+      "dependencies": ["cn", "lucide-react"],
+      "registryDependencies": ["https://ui.inta.site/r/collapsible.json"],
+      "files": [
+        {
+          "path": "components/ui/trace.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "Autocomplete",
+      "description": "Suggests options while the user types freely, and also accepts values outside the suggestions. If the user must pick from the options, use Combobox.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/autocomplete.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "description": "Chooses a color, with hue, saturation, a color code field, and presets.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-input",
+      "type": "registry:ui",
+      "title": "Date Input",
+      "description": "Types a date into separate year, month, and day fields, with no calendar.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/date-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Combines a date input field with a calendar popup. It can also select a range.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-input",
+      "type": "registry:ui",
+      "title": "File Input",
+      "description": "Selects, drops, or pastes files, with a file list and delete buttons.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/file-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "image-cropper",
+      "type": "registry:ui",
+      "title": "Image Cropper",
+      "description": "Crops an image, with zoom and rotation.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/image-cropper.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "listbox",
+      "type": "registry:ui",
+      "title": "Listbox",
+      "description": "Picks from a list that is always visible. Use it when a popup is not wanted.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/listbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "description": "Shows an amount within a range, such as achievement rate or usage. For task progress, use Progress.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/meter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number Input",
+      "description": "A numeric input whose value can be changed with step buttons and arrow keys. For currency, set step={0.01}.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/number-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:ui",
+      "title": "Password Input",
+      "description": "A password input with a show/hide toggle button. Agents cannot read its value.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/password-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "preferences",
+      "type": "registry:ui",
+      "title": "Preferences",
+      "description": "A mechanism that saves and reads user setting values. Combine it with Switch or Select on screens such as notification settings.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta"],
+      "files": [
+        {
+          "path": "components/ui/preferences.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "Rating",
+      "description": "Gives a score using stars or similar marks.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/rating.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "Picks one option from a few in a compact horizontal strip, such as for switching views.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/segmented-control.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "time-input",
+      "type": "registry:ui",
+      "title": "Time Input",
+      "description": "Types a time into separate hour and minute fields.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/time-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "Lines up events in chronological order, for showing progress and history.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "token-input",
+      "type": "registry:ui",
+      "title": "Token Input",
+      "description": "Lets users type text mixed with tokens such as people, files, or tags.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/token-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "Groups buttons and toggles into a single tab stop and moves between them with arrow keys. Use it for bulk action bars on lists and formatting bars in editors.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": ["https://ui.inta.site/r/button.json"],
+      "files": [
+        {
+          "path": "components/ui/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "Tree",
+      "description": "Navigates a hierarchy by expanding and collapsing nodes, such as departments or folders.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "trigger-menu",
+      "type": "registry:ui",
+      "title": "Trigger Menu",
+      "description": "Opens a menu when the user types @, /, or # in an input, and inserts a mention or command.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"],
+      "files": [
+        {
+          "path": "components/ui/trigger-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "waterfall",
+      "type": "registry:ui",
+      "title": "Waterfall",
+      "description": "Lays out segments along a time axis, for breaking down processing time or lead time.",
+      "dependencies": [
+        "@ui-sdk/core@beta",
+        "@ui-sdk/react@beta",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/ui/waterfall.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "all",
+      "type": "registry:item",
+      "title": "All components",
+      "description": "Adds every component in the registry at once.",
+      "registryDependencies": [
+        "https://ui.inta.site/r/accordion.json",
+        "https://ui.inta.site/r/alert.json",
+        "https://ui.inta.site/r/alert-dialog.json",
+        "https://ui.inta.site/r/aspect-ratio.json",
+        "https://ui.inta.site/r/attachment.json",
+        "https://ui.inta.site/r/autocomplete.json",
+        "https://ui.inta.site/r/avatar.json",
+        "https://ui.inta.site/r/badge.json",
+        "https://ui.inta.site/r/breadcrumb.json",
+        "https://ui.inta.site/r/bubble.json",
+        "https://ui.inta.site/r/button.json",
+        "https://ui.inta.site/r/button-group.json",
+        "https://ui.inta.site/r/calendar.json",
+        "https://ui.inta.site/r/card.json",
+        "https://ui.inta.site/r/carousel.json",
+        "https://ui.inta.site/r/chart.json",
+        "https://ui.inta.site/r/checkbox.json",
+        "https://ui.inta.site/r/code-block.json",
+        "https://ui.inta.site/r/collapsible.json",
+        "https://ui.inta.site/r/color-picker.json",
+        "https://ui.inta.site/r/combobox.json",
+        "https://ui.inta.site/r/command.json",
+        "https://ui.inta.site/r/context-menu.json",
+        "https://ui.inta.site/r/date-input.json",
+        "https://ui.inta.site/r/date-picker.json",
+        "https://ui.inta.site/r/dialog.json",
+        "https://ui.inta.site/r/drawer.json",
+        "https://ui.inta.site/r/dropdown-menu.json",
+        "https://ui.inta.site/r/empty.json",
+        "https://ui.inta.site/r/field.json",
+        "https://ui.inta.site/r/file-input.json",
+        "https://ui.inta.site/r/hover-card.json",
+        "https://ui.inta.site/r/image-cropper.json",
+        "https://ui.inta.site/r/input.json",
+        "https://ui.inta.site/r/input-group.json",
+        "https://ui.inta.site/r/input-otp.json",
+        "https://ui.inta.site/r/item.json",
+        "https://ui.inta.site/r/kbd.json",
+        "https://ui.inta.site/r/label.json",
+        "https://ui.inta.site/r/listbox.json",
+        "https://ui.inta.site/r/marker.json",
+        "https://ui.inta.site/r/menubar.json",
+        "https://ui.inta.site/r/message.json",
+        "https://ui.inta.site/r/message-scroller.json",
+        "https://ui.inta.site/r/meter.json",
+        "https://ui.inta.site/r/native-select.json",
+        "https://ui.inta.site/r/navigation-menu.json",
+        "https://ui.inta.site/r/number-input.json",
+        "https://ui.inta.site/r/pagination.json",
+        "https://ui.inta.site/r/password-input.json",
+        "https://ui.inta.site/r/popover.json",
+        "https://ui.inta.site/r/preferences.json",
+        "https://ui.inta.site/r/progress.json",
+        "https://ui.inta.site/r/questionnaire.json",
+        "https://ui.inta.site/r/radio-group.json",
+        "https://ui.inta.site/r/rating.json",
+        "https://ui.inta.site/r/resizable.json",
+        "https://ui.inta.site/r/scroll-area.json",
+        "https://ui.inta.site/r/segmented-control.json",
+        "https://ui.inta.site/r/select.json",
+        "https://ui.inta.site/r/separator.json",
+        "https://ui.inta.site/r/sheet.json",
+        "https://ui.inta.site/r/sidebar.json",
+        "https://ui.inta.site/r/skeleton.json",
+        "https://ui.inta.site/r/slider.json",
+        "https://ui.inta.site/r/spinner.json",
+        "https://ui.inta.site/r/switch.json",
+        "https://ui.inta.site/r/table.json",
+        "https://ui.inta.site/r/tabs.json",
+        "https://ui.inta.site/r/textarea.json",
+        "https://ui.inta.site/r/time-input.json",
+        "https://ui.inta.site/r/timeline.json",
+        "https://ui.inta.site/r/toast.json",
+        "https://ui.inta.site/r/toggle.json",
+        "https://ui.inta.site/r/toggle-group.json",
+        "https://ui.inta.site/r/token-input.json",
+        "https://ui.inta.site/r/toolbar.json",
+        "https://ui.inta.site/r/tooltip.json",
+        "https://ui.inta.site/r/trace.json",
+        "https://ui.inta.site/r/tree.json",
+        "https://ui.inta.site/r/trigger-menu.json",
+        "https://ui.inta.site/r/waterfall.json"
+      ],
+      "files": []
     }
   ]
 }

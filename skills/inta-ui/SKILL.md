@@ -236,6 +236,7 @@ Which component to use in common situations. See the use case and component page
 
 ### Navigate
 
+- [Header](https://ui.inta.site/components/header.md): A full-width header at the top of the screen, with the logo and product path on the left and global settings at the right end.
 - [Sidebar](https://ui.inta.site/components/sidebar.md): Navigation placed on the left of an app, with collapsing and mobile support.
 - [Navigation Menu](https://ui.inta.site/components/navigation-menu.md): Site navigation where each item can open a panel of links.
 - [Breadcrumb](https://ui.inta.site/components/breadcrumb.md): Shows the hierarchy down to the current location as links.

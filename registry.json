@@ -1397,6 +1397,19 @@
       ]
     },
     {
+      "name": "header",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "components/ui/header.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Header",
+      "description": "A full-width header at the top of the screen, with the logo and product path on the left and global settings at the right end.",
+      "dependencies": ["@ui-sdk/core@beta", "@ui-sdk/react@beta", "cn"]
+    },
+    {
       "name": "all",
       "type": "registry:item",
       "title": "All components",
@@ -1433,6 +1446,7 @@
         "https://ui.inta.site/r/empty.json",
         "https://ui.inta.site/r/field.json",
         "https://ui.inta.site/r/file-input.json",
+        "https://ui.inta.site/r/header.json",
         "https://ui.inta.site/r/hover-card.json",
         "https://ui.inta.site/r/image-cropper.json",
         "https://ui.inta.site/r/input.json",

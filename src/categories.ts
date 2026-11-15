@@ -87,6 +87,7 @@ export const categories = [
     title: "移動する",
     titleEn: "Navigate",
     components: [
+      "header",
       "sidebar",
       "navigation-menu",
       "breadcrumb",

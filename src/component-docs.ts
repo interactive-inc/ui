@@ -360,6 +360,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
       "The application menu bar at the top, lining up items such as File, Edit, and View.",
     sdk: "menubar",
   },
+  header: {
+    title: "Header",
+    summary:
+      "画面の一番上で全幅に伸びるヘッダー。左にロゴとパンくず、右端にどのページでも使う設定を置く。",
+    summaryEn:
+      "A full-width header at the top of the screen, with the logo and product path on the left and global settings at the right end.",
+  },
   sidebar: {
     title: "Sidebar",
     summary:
